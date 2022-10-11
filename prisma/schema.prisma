@@ -1,0 +1,139 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+generator gen {
+  provider = "prisma-client-js"
+}
+// Used to generate typescript models
+generator client {
+  provider = "prisma-class-validator-generator"
+  output   = "./generated/prisma-client-js"
+}
+
+/// A service table to store last request made to the RapidAPI endpoint
+model ApiRequestsInfo {
+    id Int @id
+    last_request DateTime
+}
+
+/// The table where every items in a request to RapidAPI endpoint is stored
+model ESGNews {
+    request_id  Int
+    companyname String
+    url String @id
+    insider String
+    outsider    String
+    ceo String
+    title   String
+    date    String
+    company_rel Float?
+    insider_rel Float?
+    outsider_rel    Float?
+    ceo_rel Float?
+    company_sentiment   Float?
+    insider_sentiment   Float?
+    outsider_sentiment  Float?
+    ceo_sentiment   Float?
+    GHG_emissions_similarity    Float?
+    GHG_emissions_sentiment Float?
+    Air_quality_similarity  Float?
+    Air_quality_sentiment   Float?
+    Energy_management_similarity    Float?
+    Energy_management_sentiment Float?
+    Water_wastewater_management_similarity  Float?
+    Water_wastewater_management_sentiment   Float?
+    Waste_hazardous_management_similarity   Float?
+    Waste_hazardous_management_sentiment    Float?
+    Ecological_impact_similarity    Float?
+    Ecological_impact_sentiment Float?
+    Human_rights_community_similarity   Float?
+    Human_rights_community_sentiment    Float?
+    Customer_privacy_similarity Float?
+    Customer_privacy_sentiment  Float?
+    Data_security_similarity    Float?
+    Data_security_sentiment Float?
+    Access_affordability_similarity Float?
+    Access_affordability_sentiment  Float?
+    Product_quality_safety_similarity   Float?
+    Product_quality_safety_sentiment    Float?
+    Customer_welfare_similarity Float?
+    Customer_welfare_sentiment  Float?
+    Selling_practices_product_label_similarity  Float?
+    Selling_practices_product_label_sentiment   Float?
+    Labor_practices_similarity  Float?
+    Labor_practices_sentiment   Float?
+    Modern_slavery_similarity   Float?
+    Modern_slavery_sentiment    Float?
+    Employee_health_safety_similarity   Float?
+    Employee_health_safety_sentiment    Float?
+    Employee_engagement_diversity_similarity    Float?
+    Employee_engagement_diversity_sentiment Float?
+    Gender_equality_similarity  Float?
+    Gender_equality_sentiment   Float?
+    Product_design_lifecycle_similarity Float?
+    Product_design_lifecycle_sentiment  Float?
+    Business_model_resilience_similarity    Float?
+    Business_model_resilience_sentiment Float?
+    Environmental_supply_chain_similarity   Float?
+    Environmental_supply_chain_sentiment    Float?
+    Social_supply_chain_similarity  Float?
+    Social_supply_chain_sentiment   Float?
+    Materials_sourcing_efficiency_similarity    Float?
+    Materials_sourcing_efficiency_sentiment Float?
+    Physical_impacts_climate_change_similarity  Float?
+    Physical_impacts_climate_change_sentiment   Float?
+    Governance_structures_similarity    Float?
+    Governance_structures_sentiment Float?
+    Business_ethics_similarity  Float?
+    Business_ethics_sentiment   Float?
+    Competitive_behavior_similarity Float?
+    Competitive_behavior_sentiment  Float?
+    Management_legal_regulatory_similarity  Float?
+    Management_legal_regulatory_sentiment   Float?
+    Risk_management_similarity  Float?
+    Risk_management_sentiment   Float?
+    Coronavirus_similarity  Float?
+    Coronavirus_sentiment   Float?
+    Sustainable_Development_Goal_1_similarity   Float?
+    Sustainable_Development_Goal_1_sentiment    Float?
+    Sustainable_Development_Goal_2_similarity   Float?
+    Sustainable_Development_Goal_2_sentiment    Float?
+    Sustainable_Development_Goal_3_similarity   Float?
+    Sustainable_Development_Goal_3_sentiment    Float?
+    Sustainable_Development_Goal_4_similarity   Float?
+    Sustainable_Development_Goal_4_sentiment    Float?
+    Sustainable_Development_Goal_5_similarity   Float?
+    Sustainable_Development_Goal_5_sentiment    Float?
+    Sustainable_Development_Goal_6_similarity   Float?
+    Sustainable_Development_Goal_6_sentiment    Float?
+    Sustainable_Development_Goal_7_similarity   Float?
+    Sustainable_Development_Goal_7_sentiment    Float?
+    Sustainable_Development_Goal_8_similarity   Float?
+    Sustainable_Development_Goal_8_sentiment    Float?
+    Sustainable_Development_Goal_9_similarity   Float?
+    Sustainable_Development_Goal_9_sentiment    Float?
+    Sustainable_Development_Goal_10_similarity  Float?
+    Sustainable_Development_Goal_10_sentiment   Float?
+    Sustainable_Development_Goal_11_similarity  Float?
+    Sustainable_Development_Goal_11_sentiment   Float?
+    Sustainable_Development_Goal_12_similarity  Float?
+    Sustainable_Development_Goal_12_sentiment   Float?
+    Sustainable_Development_Goal_13_similarity  Float?
+    Sustainable_Development_Goal_13_sentiment   Float?
+    Sustainable_Development_Goal_14_similarity  Float?
+    Sustainable_Development_Goal_14_sentiment   Float?
+    Sustainable_Development_Goal_15_similarity  Float?
+    Sustainable_Development_Goal_15_sentiment   Float?
+    Sustainable_Development_Goal_16_similarity  Float?
+    Sustainable_Development_Goal_16_sentiment   Float?
+    Sustainable_Development_Goal_17_similarity  Float?
+    Sustainable_Development_Goal_17_sentiment   Float?
+    Controversial_weapons_similarity    Float?
+    Controversial_weapons_sentiment Float?
+}
+
